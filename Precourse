@@ -142,6 +142,142 @@ public class Main {
 }
 
 ----------------------------------------------------------
+PALINDROME NUMBER
+Input
+121
+
+Output
+true 
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main{
+	public static void main (String[] args) throws java.lang.Exception{
+	    Scanner sc = new Scanner(System.in);
+	    int num = sc.nextInt();
+	   
+		int originalNumber = num;
+	    int rev = 0;
+	    int dig;
+	    while(num>0){
+	      dig = num%10;
+	      rev = (rev*10)+dig;
+	      num = num/10;
+	    }
+	    if(originalNumber == rev){
+	      System.out.println(true);
+	    }else{
+	      System.out.println(false);
+	    }
+	}
+}
+
+-------------------------------------------------
+Armstrong Number Finder
+Given a number N, you need to check whether it is Armstrong number or not.
+A number is called an Armstrong number if the sum of cubes of each digit of the number is equal to the number itself.
 
 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
 
+public class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	
+	    int rem,arm=0;
+	    Scanner sc = new Scanner(System.in);
+	    int num = sc.nextInt();
+	    int original = num;
+	    
+		while(num>0){
+	      rem = num%10;
+	      arm = (rem*rem*rem)+arm;
+	      num = num/10;
+	    }
+	    if(original == arm){
+	      System.out.println(1);
+	    }else{
+	      System.out.println(0);
+	    }
+	}
+}
+--------------------------------------------------------------------------
+
+Sum of Natural Numbers
+
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+      long n = scanner.nextLong();
+    	long ans = (n*(n+1L))/2;
+    	System.out.println(ans);
+    }
+}
+---------------------------------------------------------------------------
+
+ 	#
+      ##
+     ###
+    ####
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main {
+	public static void main (String[] args) throws java.lang.Exception {
+// 		your code
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    
+    for(int i=1;i<=n;i++){
+      
+      for(int j=1;j<=n-i;j++){   // for spaces printing
+        System.out.print(" ");
+      }
+      for(int j=1;j<=i;j++){
+        System.out.print("#");    //for * printing
+      }					
+      System.out.println();
+    }
+	}
+}
+
+
+-----------------------------------------------------
+
+Quardants
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		//your code here
+    Scanner sc = new Scanner(System.in);
+    int x = sc.nextInt();
+    int y = sc.nextInt();
+    
+    if(x>0 && y>0){
+      System.out.println(1);
+    }
+    else if(x<0 && y>0){
+      System.out.println(2);
+    }
+    else if(x<0 && y<0){
+      System.out.println(3);
+    }else{
+      System.out.println(4);
+    }
+	}
+}
