@@ -21,7 +21,7 @@ public class Main {
         System.out.println(fer);
     }
 }
-
+----------------------------------------------
 
 import java.util.*;
 import java.io.*;
@@ -34,7 +34,7 @@ public class Main {
 		System.out.println("*****");
     }
 }
-
+----------------------------------------------
 input : 3
 output
 ***
@@ -60,7 +60,7 @@ class Main {
 	}
 }
 
-
+----------------------------------------------
 
 import java.util.*;
 import java.lang.*;
@@ -80,6 +80,7 @@ public class Main
     System.out.println(c);
 	}
 }
+
 ---------------------------------------------
 Unit 3 | CONDITIONALS
 ---------------------------------------------
@@ -114,7 +115,7 @@ public class Main {
     }
 	}
 }
-
+--------------------------------------------------------------------------------------------
 
 LEAP YEAR
 
@@ -124,17 +125,23 @@ import java.io.*;
 
 public class Main {
 	public static void main (String[] args) throws java.lang.Exception {
-		//your code here
-    Scanner sc = new Scanner(System.in);
-    int year = sc.nextInt();
-    if(year%100 == 0 && year%400==0){
-      System.out.println(1);
-    }else if(year%100 != 0 && year%4==0){
-      System.out.println(1);
+    	
+	Scanner sc = new Scanner(System.in);
+    	int year = sc.nextInt();
+    	
+	if(year%100 == 0 && year%400==0){
+      	System.out.println(1);
+    	}
+	else if(year%100 != 0 && year%4==0){
+      	System.out.println(1);
+    	}	
+    	else{
+      	System.out.println(0);
+    	}
     }
-    else{
-      System.out.println(0);
-    }
-	}
 }
+
+----------------------------------------------------------
+
+
 
