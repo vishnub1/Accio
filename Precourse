@@ -153,8 +153,10 @@ public class Main {
 	}
 }
 
-----------------------------------------------------------
-PALINDROME NUMBER
+-----------------------------------------------------------------------------
+*******************
+//PALINDROME NUMBER
+*******************
 Input
 121
 
@@ -187,8 +189,11 @@ public class Main{
 	}
 }
 
--------------------------------------------------
-Armstrong Number Finder
+----------------------------------------------------------------
+*************************
+//Armstrong Number Finder
+*************************
+
 Given a number N, you need to check whether it is Armstrong number or not.
 A number is called an Armstrong number if the sum of cubes of each digit of the number is equal to the number itself.
 
@@ -249,22 +254,34 @@ class Solution {
 }
 */
 --------------------------------------------------------------------------
-
-Sum of Natural Numbers
+*************************
+// Sum of Natural Numbers
+*************************
 
 import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
-      Scanner scanner = new Scanner(System.in);
-      long n = scanner.nextLong();
-    	long ans = (n*(n+1L))/2;
-    	System.out.println(ans);
+      Scanner sc = new Scanner(System.in);
+      long n = sc.nextLong();
+	  
+    	// long ans = (n*(n+1L))/2;
+    	// System.out.println(ans);
+	  
+	  long sum = 0;
+	  for(int i=0;i<=n;i++){
+		  sum = sum+i;
+	  }
+	  System.out.println(sum);
     }
 }
----------------------------------------------------------------------------
 
- 	#
+---------------------------------------------------------------------------
+************
+//Staircase
+************
+
+       #
       ##
      ###
     ####
@@ -275,51 +292,49 @@ import java.io.*;
 
 public class Main {
 	public static void main (String[] args) throws java.lang.Exception {
-// 		your code
-    Scanner sc = new Scanner(System.in);
-    int n = sc.nextInt();
-    
-    for(int i=1;i<=n;i++){
-      
-      for(int j=1;j<=n-i;j++){   // for spaces printing
-        System.out.print(" ");
-      }
-      for(int j=1;j<=i;j++){
-        System.out.print("#");    //for * printing
-      }					
-      System.out.println();
-    }
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+
+		for(int i=1;i<=n;i++){
+			for(int j=1;j<=n-i;j++){
+				System.out.print(" ");  //spaces printing
+			}
+			for(int k=1;k<=i;k++){
+				System.out.print("#");  //# printing
+			}
+			System.out.println();		// for moving cursor to next Line
+		}
 	}
 }
 
 
 -----------------------------------------------------
-
-Quardants
+************
+// Quardants
+************
 
 import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-public class Main
-{
-	public static void main (String[] args) throws java.lang.Exception
-	{
-		//your code here
+public class Main{
+	public static void main (String[] args) throws java.lang.Exception{
     Scanner sc = new Scanner(System.in);
-    int x = sc.nextInt();
-    int y = sc.nextInt();
+	    int x = sc.nextInt();
+	    int y = sc.nextInt();
     
-    if(x>0 && y>0){
-      System.out.println(1);
-    }
-    else if(x<0 && y>0){
-      System.out.println(2);
-    }
-    else if(x<0 && y<0){
-      System.out.println(3);
-    }else{
-      System.out.println(4);
-    }
+	    if(x>0 && y>0){
+	      System.out.println(1);
+	    }
+	    else if(x<0 && y>0){
+	      System.out.println(2);
+	    }
+	    else if(x<0 && y<0){
+	      System.out.println(3);
+	    }else{
+	      System.out.println(4);
+	    }
 	}
 }
+
+================================================================================
