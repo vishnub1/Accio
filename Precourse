@@ -1,4 +1,6 @@
+==============================================
 // Unit 1 | Intro To Programming
+==============================================
 
 public class Main {
     public static void main(String args[]) {
@@ -6,10 +8,13 @@ public class Main {
 		System.out.println("Hello, Java.");
     }
 }
-----------------------------------------------
 
+==============================================
 //Unit 2 | Data Types & Variables
+==============================================
+************************
 //Celsius to Fahrenheit
+************************
 
 import java.util.*;
 
@@ -22,6 +27,9 @@ public class Main {
     }
 }
 ----------------------------------------------
+********************
+//STAR PATTERN PRINT
+********************
 
 import java.util.*;
 import java.io.*;
@@ -35,6 +43,7 @@ public class Main {
     }
 }
 ----------------------------------------------
+
 input : 3
 output
 ***
@@ -61,29 +70,30 @@ class Main {
 }
 
 ----------------------------------------------
+*****************
+// INPUT OUTPUT
+*****************
 
 import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-public class Main
-{
-	public static void main (String[] args) throws java.lang.Exception
-	{
-		//your code here
-    Scanner scanner = new Scanner(System.in);
-	  int a = scanner.nextInt();
-    int b = scanner.nextInt();
-    int c = scanner.nextInt();
-    System.out.println(a);
-    System.out.println(b);
-    System.out.println(c);
+public class Main {
+	public static void main (String[] args) throws java.lang.Exception {
+    		Scanner scanner = new Scanner(System.in);
+	  	int a = scanner.nextInt();
+    		int b = scanner.nextInt();
+    		int c = scanner.nextInt();
+    		
+		System.out.println(a);
+    		System.out.println(b);
+    		System.out.println(c);
 	}
 }
 
----------------------------------------------
+====================================================================
 Unit 3 | CONDITIONALS
----------------------------------------------
+====================================================================
 Note:
 
 A triangle is acute-angled, if twice the square of the largest side is less than the sum of squares of all the sides.
@@ -103,28 +113,29 @@ public class Main {
 		int a = sc.nextInt();
 		int b = sc.nextInt();
 		int c = sc.nextInt();
-	    int maxSide = a;
+	    	int maxSide = a;
 	    
 		if(b>maxSide){
-	      maxSide = b;
-	    }
+	     	 maxSide = b;
+	    	}
 		if(c>maxSide){
-	      maxSide = c;
-	    }
-	    if((2*maxSide*maxSide)>a*a+b*b+c*c){
-	      System.out.println(3);
-	    }
+	     	 maxSide = c;
+	   	}
+	    	if((2*maxSide*maxSide)>a*a+b*b+c*c){
+	      	 System.out.println(3);
+	    	}
 		else if((2*maxSide*maxSide)==a*a+b*b+c*c){
-	      System.out.println(2);
-	    }
+	     	 System.out.println(2);
+	    	}
 		else{
-	      System.out.println(1);
+	     	 System.out.println(1);
 	    }
 	}
 }
 --------------------------------------------------------------------------------------------
-
-LEAP YEAR
+**************
+// LEAP YEAR
+**************
 
 import java.util.*;
 
