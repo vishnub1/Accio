@@ -93,52 +93,53 @@ A triangle is obtuse-angled, if twice the square of its largest side is greater 
 A triangle is right-angled, if twice the square of its largest side is exactly equal to the sum of squares of all the sides.
 
 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
 public class Main {
 	public static void main (String[] args) throws java.lang.Exception {
-		//your code here
-    Scanner sc = new Scanner(System.in);
-    int a = sc.nextInt();
-    int b = sc.nextInt();
-    int c = sc.nextInt();
-    int maxSide = a;
-    if(b>maxSide){
-      maxSide = b;
-    }if(c>maxSide){
-      maxSide = c;
-    }
-    if((2*maxSide*maxSide)>a*a+b*b+c*c){
-      System.out.println(3);
-    }else if((2*maxSide*maxSide)==a*a+b*b+c*c){
-      System.out.println(2);
-    }else{
-      System.out.println(1);
-    }
+	    Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+	    int maxSide = a;
+	    
+		if(b>maxSide){
+	      maxSide = b;
+	    }
+		if(c>maxSide){
+	      maxSide = c;
+	    }
+	    if((2*maxSide*maxSide)>a*a+b*b+c*c){
+	      System.out.println(3);
+	    }
+		else if((2*maxSide*maxSide)==a*a+b*b+c*c){
+	      System.out.println(2);
+	    }
+		else{
+	      System.out.println(1);
+	    }
 	}
 }
 --------------------------------------------------------------------------------------------
 
 LEAP YEAR
 
-mport java.util.*;
-import java.lang.*;
-import java.io.*;
+import java.util.*;
 
 public class Main {
-	public static void main (String[] args) throws java.lang.Exception {
-    	
-	Scanner sc = new Scanner(System.in);
-    	int year = sc.nextInt();
-    	
-	if(year%100 == 0 && year%400==0){
-      	System.out.println(1);
-    	}
-	else if(year%100 != 0 && year%4==0){
-      	System.out.println(1);
-    	}	
-    	else{
-      	System.out.println(0);
-    	}
-    }
+	public static void main(String[] args) throws Throwable {
+		Scanner sc = new Scanner(System.in);
+		int year = sc.nextInt();
+
+		if((year%4==0) && (year%100!=0) || year%400==0){   
+			System.out.println(1);
+		}
+		else{
+			System.out.println(0);
+		}
+	}
 }
 
 ----------------------------------------------------------
@@ -156,21 +157,22 @@ import java.io.*;
 public class Main{
 	public static void main (String[] args) throws java.lang.Exception{
 	    Scanner sc = new Scanner(System.in);
-	    int num = sc.nextInt();
-	   
+		int num = sc.nextInt();
 		int originalNumber = num;
-	    int rev = 0;
-	    int dig;
-	    while(num>0){
-	      dig = num%10;
-	      rev = (rev*10)+dig;
-	      num = num/10;
-	    }
-	    if(originalNumber == rev){
-	      System.out.println(true);
-	    }else{
-	      System.out.println(false);
-	    }
+		int dig;
+		int rev = 0;
+	
+		while(num>0){
+			dig = num%10;
+			rev = (rev*10)+dig;
+			num = num/10;
+		}
+		if(originalNumber == rev){
+			System.out.println("true");
+		}
+		else{
+			System.out.println("false");
+		}
 	}
 }
 
@@ -195,17 +197,46 @@ public class Main
 	    int original = num;
 	    
 		while(num>0){
-	      rem = num%10;
-	      arm = (rem*rem*rem)+arm;
-	      num = num/10;
-	    }
-	    if(original == arm){
-	      System.out.println(1);
-	    }else{
-	      System.out.println(0);
-	    }
+	      	rem = num%10;
+	      	arm = (rem*rem*rem)+arm;
+	      	num = num/10;
+	    	}
+	    	if(original == arm){
+	      	System.out.println(1);
+	    	}else{
+	      	System.out.println(0);
+	    	}
 	}
 }
+/*
+import java.util.*;
+
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        Solution.isArmstrongOrNot(N);
+    }
+}
+class Solution {
+    static void isArmstrongOrNot(int N) {
+        // Your code here
+		int originalNumber = N;
+		int arm=0,rem;
+		while(N>0){
+			rem = N%10;
+			arm = (rem*rem*rem)+arm;
+			N = N/10;	
+		}
+		if(originalNumber==arm){
+			System.out.println(1);
+		}
+		else{
+			System.out.println(0);
+		}
+    }
+}
+*/
 --------------------------------------------------------------------------
 
 Sum of Natural Numbers
