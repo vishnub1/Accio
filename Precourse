@@ -423,5 +423,120 @@ public class Main {
 *****************
 // Array Rotation
 *****************
+Input Format
+	The first line contains 3 space-separated integers n, k & q the number of elements in the integer array, the rotation count and the number of queries.
+	The second line contains n space-separated integers, describing elements in arr.
+	The third line contains q space-separated integers, describing elements in queries
 
+Output Format
+	Return the array containing values of the elements at the given indices in array queries.
 
+Input
+3 2 2
+3 4 5
+1 2
+
+Output
+5 3
+-------------------------
+
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		// STEP 1 Taking input From the user 
+		int n,k,q; 
+		n = sc.nextInt(); // size of the array 
+		k = sc.nextInt();  // number of rotations 
+		q = sc.nextInt();  // total number of queries 
+
+		// STEP 2 Input the values into the array 
+		int arr[] = new int[n];
+		int rotatedArray[] = new int[n];
+		
+		for(int i=0;i<n;i=i+1) {
+		    arr[i] = sc.nextInt();
+		}
+		for(int i=0;i<n;i++){
+			int newIndex = (i+k)%n;
+			rotatedArray[newIndex] = arr[i];
+		}
+		for(int i=0;i<q;i++){
+			int index = sc.nextInt();
+			System.out.print(rotatedArray[index]+" ");
+		}
+	}
+}
+
+---------------------------------------------------------------------------------
+*******
+//Pairs
+*******
+Given an array of N integers, count the total pairs of integers that have a difference of K.
+Input Format
+	1st line contains N & K (integers).
+	2nd line contains N numbers of the array.
+
+Output Format
+	One integer - the number of pairs of numbers that have a difference K.
+	
+Input
+4 1  
+32 0 63 8
+
+Output
+0
+------------------------------------
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main {
+	public static void main (String[] args) throws java.lang.Exception{
+
+    Scanner sc = new Scanner(System.in);
+    int N = sc.nextInt();
+    int K = sc.nextInt();
+    
+    int arr[] = new int[N];
+    for(int i=0;i<N;i++){
+      arr[i] = sc.nextInt();
+    }
+    
+    int count=0;
+    for(int i=0;i<N;i++){
+      for(int j=i+1;j<N;j++){    
+        if(arr[i]-arr[j]==K || arr[j]-arr[i]==K){
+          count++;
+        }
+      }
+    }
+    System.out.println(count);
+	}
+}
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n,k;
+        n = sc.nextInt();
+        k = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+                arr[i]=sc.nextInt();
+        }
+		int count = 0;
+		for(int i=0;i<n;i++){
+			for(int j=i+1;j<n;j++){
+				if((arr[i]-arr[j])==k || (arr[j]-arr[i])==k){
+					count++;
+				}
+			}
+		}
+		System.out.println(count);
+    }
+}
+	
