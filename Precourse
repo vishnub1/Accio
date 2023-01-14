@@ -624,8 +624,261 @@ public class Main {
 }
 ______________________________________________________________________________________________
 
+******************
+// Number of Days
+******************
+
+Given the number of the month, 
+your task is to calculate the number of days present in the particular month.
+
+Note:- Consider non-leap year.
+------------------------------
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main {
+	public static void main (String[] args) throws java.lang.Exception {
+	    Scanner sc = new Scanner(System.in);
+	    int m = sc.nextInt();  //m = month
+
+		if(m>0 && m<=12){
+			
+			if(m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12){
+		      System.out.println(31);
+		    }
+		    else if(m==2){
+		      System.out.println(28);
+		    }
+		    else if(m==4 || m==6 || m==9 || m==11){
+		      System.out.println(30);
+		    }
+		}
+		else{
+			System.out.println("Please enter the months bet '1-12'");
+		}
+	}
+}
+
+______________________________________________________________________________________________
+
+*************
+// Stopwatch
+*************
+
+Robin just received a stopwatch from her grandfather. Robin’s stopwatch has a single button. 
+Pressing the button alternates between stopping and starting the stopwatch’s timer. When the timer is on, 
+the displayed time increases by 1 every second.
+Initially, the stopwatch is stopped and the timer reads 0 seconds. Given a sequence of times that the stopwatch button is pressed, 
+determine what the stopwatch’s timer displays, if stopped. If it's still running, print "still running".
+
+Input Format
+The first line of input contains a single integer N, which is the number of times the stopwatch was pressed.
+The next N lines describe the times the stopwatch’s button was pressed in increasing order. Each line contains a single integer t, 
+which is the time the button was pressed. No two button presses happen in the same second.
+
+Output Format
+Print "still running" if the stopwatch’s timer is still running after all button presses were made. 
+Otherwise, display the number of seconds the face of the stopwatch.
+
+Example 1
+Input
+2
+7 11
+
+Output
+4
+
+Explanation
+The stopwatch’s timer starts at 0 seconds. After 7 seconds, the button is pressed, and the timer starts. After 11 seconds, 
+the button is pressed again, and the timer stops. The stopwatch’s timer displays 4 seconds.
+
+Example 2
+Input
+5
+2 5 9 10 17
+
+Output
+still running
+
+Explanation
+The stopwatch’s timer starts at 0 seconds. After 2 seconds, the button is pressed, and the timer starts. 
+After 5 seconds, the button is pressed again, and the timer stops. After 9 seconds, the button is pressed, 
+and the timer starts. After 10 seconds, the button is pressed again, and the timer stops. After 17 seconds, 
+the button is pressed, and the timer starts. The stopwatch’s timer is still running.
+------------------------------------------------------------------------------------
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main {
+	public static void main (String[] args) throws java.lang.Exception {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	   
+		if(n%2==1){
+	      System.out.println("still running");
+	    }
+	    else{
+	      int time = 0;
+	      for(int i=0;i<n/2;i++){
+			  int start = sc.nextInt();
+			  int end = sc.nextInt();	        
+			  
+			  time += (end-start);
+	      }
+	      System.out.println(time); 
+	    }
+	}
+}
+
+______________________________________________________________________________________________
 
 ============================================================================================
+// Unit 7 | Practice questions- Loops
+============================================================================================
+
+*************************
+// Second Largest Integer
+*************************
+Input:
+5
+8 34 54 43
+
+Output:
+43
+--------------
+
+import java.io.*;
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        // your code here
+		
+		Scanner sc = new Scanner(System.in);
+		int arr[] = new int[5];
+		for(int i=0;i<5;i++){
+			arr[i] = sc.nextInt();
+		}
+
+		
+		for(int i=0;i<5;i++){
+			for(int j=i+1;j<5;j++){
+				int max=arr[j];
+				if(arr[i]>max){
+					max = arr[i];
+					arr[i] = arr[j];
+					arr[j] = max;
+				}
+			}
+		}
+		System.out.print(arr[3]);
+    }
+}
+
+______________________________________________________________________________________________
+
+**********************
+// Factorial with loop
+**********************
+
+Find the factorial of a given number 
+where 
+n! = n * n-1 * n-2 .....* 1.
+------------------------------
+
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+		long ans = 1;
+		for(int i=2;i<=n;i++){
+			ans *= i;
+		}
+		System.out.println(ans);
+	}
+}
+
+______________________________________________________________________________________________
+
+********************
+// Sigma of Equation
+********************
+
+Given a number N, find the value of the below equation for the given number.
+
+Equation
+N
+∑  {(X + 1)^2 - (3X + 1) + X}
+X = 1
+
+Explanation
+
+{(1+1)² - (3x1+1) + (1)} + {(2+1)² - (3x2+1) +2} = 4 - 4 +1 + 9 -7 +2 = 5
+
+--------------------------------------------------------
+
+import java.util.*;
+import static java.lang.Math.ceil;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+		long ans = 0;
+		for(long i=0;i<=n;i++){
+			ans += (((i+1)*(i+1)) - (3*i+1)+i);	
+		}
+		System.out.println(ans);
+    }
+}
+
+
+______________________________________________________________________________________________
+
+****************************
+// Last two digit Fibonacci
+****************************
+
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    int n = scanner.nextInt();
+
+    int[] fib = new int[n + 1];
+    fib[0] = 0;
+    fib[1] = 1;
+
+    for (int i = 2; i <= n; i++) {
+      fib[i] = (fib[i - 1] + fib[i - 2]) % 100;
+    }
+
+    if (fib[n] < 10) {
+      System.out.println("0" + fib[n]);
+    } else {
+      System.out.println(fib[n]);
+    }
+  }
+}
+______________________________________________________________________________________________
+
+============================================================================================
+Unit 8 | More Practice Questions
+============================================================================================
+
+
+
+
+============================================================================================
+
 import java.io.*;
 import java.util.*; 
 public class Main {
